@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,7 +17,7 @@ public class Consulta implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
@@ -23,12 +26,12 @@ public class Consulta implements Serializable {
 	private String procedimento;
 	
 	@ManyToOne
-	@JsonColumn(name = "animal_id")
+	@JoinColumn(name = "animal_id")
 	@JsonIgnore
 	private Animal animal;
 	
 	@ManyToOne
-	@JsonColumn(name = "veterinario_id")
+	@JoinColumn(name = "veterinario_id")
 	@JsonIgnore
 	private Veterinario veterinario;
 

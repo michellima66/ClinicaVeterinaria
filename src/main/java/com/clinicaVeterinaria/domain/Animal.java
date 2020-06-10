@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -18,7 +20,7 @@ public class Animal implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
@@ -41,7 +43,7 @@ public class Animal implements Serializable {
 	public Animal() {
 	}
 
-	public Animal(Integer id, String nome, int idade, int sexo, Especie especie, Cliente cliente) {
+	public Animal(Integer id, String nome, int idade, TipoSexo sexo, Especie especie, Cliente cliente) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -76,10 +78,10 @@ public class Animal implements Serializable {
 	}
 
 	public TipoSexo getSexo() {
-		return Tiposexo.toEnum(sexo);
+		return TipoSexo.toEnum(sexo);
 	}
 
-	public void setSexo(int sexo) {
+	public void setSexo(TipoSexo sexo) {
 		this.sexo = sexo.getCodigo();
 	}
 

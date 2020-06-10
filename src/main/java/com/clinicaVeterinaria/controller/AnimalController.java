@@ -1,4 +1,4 @@
-package com.clinicaieterinaria.controller;
+package com.clinicaVeterinaria.controller;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.clinicaVeterinaria.domain.Animal;
+import com.clinicaVeterinaria.service.AnimalService;
 
 @RestController
 @RequestMapping("/animais")
@@ -27,7 +28,7 @@ public class AnimalController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Animal> find(@PathVariable Integer id){
-		Animal animal = animalService.ok(animal);
+		Animal animal = animalService.find(id);
 		
 		return ResponseEntity.ok(animal);
 	}

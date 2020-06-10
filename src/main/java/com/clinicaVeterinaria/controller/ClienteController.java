@@ -1,4 +1,4 @@
-package com.clinicaieterinaria.controller;
+package com.clinicaVeterinaria.controller;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.clinicaVeterinaria.domain.Cliente;
-import com.clinicaveterinaria.service.ClienteService;
+import com.clinicaVeterinaria.service.ClienteService;
 
 @RestController
 @RequestMapping("/clientes")
